@@ -53,8 +53,8 @@ public class DeleteMavenDependenceMojo extends AbstractMojo {
     @Parameter(defaultValue = "${repositorySystemSession}")
     private RepositorySystemSession repoSession;
 
-    /** V5_DEPENDENCE */
-    private static final String[] V5_DEPENDENCE = new String[] {
+    /** DEPENDENCE */
+    private static final String[] DEPENDENCE = new String[] {
         "ability",
         "coco-supreme",
         "coco-starter",
@@ -115,7 +115,6 @@ public class DeleteMavenDependenceMojo extends AbstractMojo {
         "coco-template",
         "coco-transaction",
         "coco-zookeeper",
-        "v5-",
         };
 
     /** ERROR_DIR */
@@ -164,10 +163,10 @@ public class DeleteMavenDependenceMojo extends AbstractMojo {
             this.deleteErrorFile(rootFile);
         } else if (ALL_FLAG.equals(artifactId) && ALL_FLAG.equals(version)) {
             // 删除 io/github/dong4j/coco 下所有的依赖 (mvn coco-assist:clear -Dname=all -Dversion=all)
-            this.deleteAllFile(rootFile, V5_DEPENDENCE, new String[] {});
+            this.deleteAllFile(rootFile, DEPENDENCE, new String[] {});
         } else if (ALL_FLAG.equals(artifactId) && StringUtils.isNotBlank(version)) {
             // 删除 io/github/dong4j/coco 下所有包中指定的版本 (mvn coco-assist:clear -Dname=all -Dversion=x.x.x)
-            this.deleteByVersion(rootFile, V5_DEPENDENCE, version);
+            this.deleteByVersion(rootFile, DEPENDENCE, version);
         } else if (StringUtils.isNotBlank(version)
                    && !ALL_FLAG.equals(version)
                    && StringUtils.isNotBlank(artifactId)
@@ -272,7 +271,7 @@ public class DeleteMavenDependenceMojo extends AbstractMojo {
     }
 
     /**
-     * 删除 v5 的所有依赖
+     * 删除所有依赖
      *
      * @param rootFile root file
      * @param names    names

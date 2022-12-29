@@ -337,7 +337,7 @@ TIMEOUT_SHOWLOG="off"
 SHOW_INFO="on"
 ENABLE_APM="off"
 # shell 启动时使用默认的日志路径
-LOG_PATH="/mnt/syslogs/v5"
+LOG_PATH="/mnt/syslogs/coco"
 LOG_NAME="all.log"
 # 最终的日志路径
 FINAL_LOG_PATH=""

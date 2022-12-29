@@ -443,7 +443,7 @@ abstract class ServicePublishMojo extends CocoAbstractMojo {
      */
     protected void fixLogDirectoryPermission(@NotNull SSHAgent sshAgent, String env, String publishFileName) throws IOException {
         sshAgent.execCommand("修复日志目录权限", StrFormatter.format(
-            "sudo chown -R coco:coco /mnt/syslogs/v5/{}/{}/*.log",
+            "sudo chown -R coco:coco /mnt/syslogs/coco/{}/{}/*.log",
             env,
             publishFileName));
     }

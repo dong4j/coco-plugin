@@ -1,6 +1,6 @@
 # 简介
 
-v5 框架配套的 Maven Plugin 项目, 提供多个插件简化开发, 部署等流程, 并通过一些约束强制规定代码的写法, 提高可维护性.
+框架配套的 Maven Plugin 项目, 提供多个插件简化开发, 部署等流程, 并通过一些约束强制规定代码的写法, 提高可维护性.
 
 此模块只是为 `coco-framework-build` 项目提供插件, 业务端不需要引入.
 
@@ -21,7 +21,7 @@ mvn clean deploy
 ```
 └── coco-plugin                    # Maven 插件
    ├── coco-plugin-common          # 插件项目基础模块， 提供开发插件的工具包
-   ├── coco-assist-maven-plugin    # V5 框架开发辅助插件
+   ├── coco-assist-maven-plugin    # 框架开发辅助插件
    ├── coco-checkstyle-plugin-rule # 代码格式检查插件
    ├── coco-enforcer-plugin-rule   # 项目依赖检查插件
    ├── coco-publish-maven-plugin   # 后端, 前端, doc, v4 springboot 服务发布插件

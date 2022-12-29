@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress VulnerableLibrariesLocal -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>io.github.dong4j</groupId>
+    <artifactId>coco-plugin</artifactId>
+    <version>${revision}</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>coco-checkstyle-plugin-rule</artifactId>
+  <name>Coco Checkstyle Plugin Rule</name>
+
+  <dependencies>
+    <!-- checkstyle -->
+    <dependency>
+      <groupId>com.puppycrawl.tools</groupId>
+      <artifactId>checkstyle</artifactId>
+      <version>10.5.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.sun</groupId>
+          <artifactId>tools</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <!-- 设置 resources 文件, 包括 src/main/java 下的 properties 和 xml, src/main/resources 下的所有文件 -->
+    <resources>
+      <resource>
+        <!-- 处理 java 目录下的配置文件 -->
+        <directory>src/main/java</directory>
+        <!-- 表示 include 中文件的占位符都会被替换 -->
+        <filtering>true</filtering>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+          <include>**/*.yml</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <excludes>
+          <!-- 排除 jrebel 配置文件 -->
+          <exclude>rebel.xml</exclude>
+        </excludes>
+        <filtering>true</filtering>
+        <includes>
+          <include>**/**</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+</project>

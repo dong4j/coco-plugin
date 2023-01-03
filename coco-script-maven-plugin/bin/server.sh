@@ -419,7 +419,7 @@ while getopts "s:r:S:d:m:c:n:h:o:tqTiwH" opt; do
 -w:启用 APM\texp: bin/server.sh -s dev -w\t\t(启动时输出参数信息)
 -m:启用 JMX 远程监控\texp: bin/server.sh -s dev -m 10089\t\t(需要添加监听端口)
 -o:重写 JVM 配置\texp: bin/server.sh -s dev -o '-Xms256M -Xmx512M'\t\t(启动时输出参数信息)
--n:重写 COCO_NAME_SAPCE 参数\texp: bin/server.sh -s dev -n 'spark'\t\t(重写的前缀, 最终为 {prefix}-{ENV}, 请不要添加 "-")
+-n:重写 COCO_NAME_SAPCE 参数\texp: bin/server.sh -s dev -n 'coco'\t\t(重写的前缀, 最终为 {prefix}-{ENV}, 请不要添加 "-")
 \033[0m"
     exit 1
     ;;

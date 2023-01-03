@@ -103,13 +103,36 @@
                 allowMissingParamTags: 是否忽略对参数注释的检查
                 allowMissingThrowsTags: 是否忽略对throws注释的检查
                 allowMissingReturnTag: 是否忽略对return注释的检查 -->
+        <!--<module name="JavadocMethod">-->
+        <!--    <property name="severity" value="error"/>-->
+        <!--    <property name="tokens" value="METHOD_DEF,CTOR_DEF"/>-->
+        <!--    <property name="accessModifiers" value="private"/>-->
+        <!--    <property name="allowMissingParamTags" value="false"/>-->
+        <!--    <property name="allowMissingReturnTag" value="true"/>-->
+        <!--    <message key="javadoc.missing" value="方法注释: 缺少/错误的 Javadoc 注释."/>-->
+        <!--</module>-->
+
         <module name="JavadocMethod">
-            <property name="severity" value="error"/>
-            <property name="tokens" value="METHOD_DEF,CTOR_DEF"/>
-            <property name="scope" value="private"/>
-            <property name="allowMissingParamTags" value="false"/>
+            <property name="accessModifiers" value="public"/>
+            <property name="allowMissingParamTags" value="true"/>
             <property name="allowMissingReturnTag" value="true"/>
+            <property name="allowedAnnotations" value="Override, Test"/>
+            <property name="tokens" value="METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF, COMPACT_CTOR_DEF"/>
             <message key="javadoc.missing" value="方法注释: 缺少/错误的 Javadoc 注释."/>
+        </module>
+        <module name="MissingJavadocMethod">
+            <property name="scope" value="public"/>
+            <property name="minLineCount" value="2"/>
+            <property name="allowedAnnotations" value="Override, Test"/>
+            <property name="tokens" value="METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF,
+                                   COMPACT_CTOR_DEF"/>
+        </module>
+        <module name="MissingJavadocType">
+            <property name="scope" value="protected"/>
+            <property name="tokens"
+                      value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF,
+                      RECORD_DEF, ANNOTATION_DEF"/>
+            <property name="excludeScope" value="nothing"/>
         </module>
 
         <!-- 检查类变量的注释

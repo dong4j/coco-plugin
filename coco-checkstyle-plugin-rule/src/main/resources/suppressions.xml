@@ -23,9 +23,7 @@
 
     <suppress checks="MethodName" files="\*Test.java"/>
     <suppress checks="FileLength"
-              files="info.spark.element.core.util.DataTypeUtils.java|util.info.spark.element.core.StringUtils.java|util.info.spark.element.core.Tools.java"/>
+              files="io.github.dong4j.coco.kernel.common.util.DataTypeUtils.java|io.github.dong4j.coco.kernel.common.util.Tools.java"/>
 
-    <suppress checks="IllegalImport"
-              files="info.spark.element.common.dns.internal.InetAddressCacheUtils.java|info.spark.element.common.dns.internal.IpParserUtils.java|info.spark.element.core.util.EnumUtils"/>
 
 </suppressions>
